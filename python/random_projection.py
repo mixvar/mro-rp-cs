@@ -70,7 +70,7 @@ if __name__ == '__main__':
     srp = sparse_random_projection(original, target_dim)
     plot_pca(srp, 'sparse random projection PCA')
 
-    undersized_srp = sparse_random_projection(original, target_dim / 4)
+    undersized_srp = sparse_random_projection(original, int(target_dim / 4))
     plot_pca(undersized_srp, 'undersized random projection PCA')
 
 
