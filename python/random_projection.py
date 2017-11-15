@@ -26,7 +26,7 @@ def get_average_distances(data):
     dense_distance_matrix = pdist(data, 'minkowski', p=2.)
     # print('distances info for minkowski(2) metric:')
     all_distances = pd.Series(dense_distance_matrix)
-    # print(all_distances.describe())
+    print(all_distances.describe())
     return all_distances.mean()
 
 
@@ -58,7 +58,6 @@ def sparse_random_projection(data, dims):
 if __name__ == '__main__':
     original = generate_data(1000, 10000)
     # print(original)
-    # d_org = get_average_distances(original) # takes loong and probably is useless
     plot_pca(original, 'original data PCA')
 
     epsilon = 0.3  # TODO what is this exactly?
@@ -70,12 +69,12 @@ if __name__ == '__main__':
 
     srp = sparse_random_projection(original, target_dim)
     plot_pca(srp, 'sparse random projection PCA')
-    # d_srp = get_average_distances(srp)
 
     undersized_srp = sparse_random_projection(original, target_dim / 4)
     plot_pca(undersized_srp, 'undersized random projection PCA')
-    # d_usrp = get_average_distances(undersized_rp)
+
 
     plt.show()
-    # print('average distances:')
-    # print('\toriginal: {0}, \tsrp: {1} undersized srp: {2}'.format(d_org, d_srp, d_usrp))
+
+    # TODO: policzyc macierze odleglosci i porownac blad teoretyczny (epsilon) z praktycznym dla roznych konfiguracji
+
