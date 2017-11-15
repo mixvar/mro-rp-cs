@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
     epsilon = 0.3
     target_dim = estimate_target_dim(original, epsilon)
-    print('maximum safe dimensionality reduction from {0} with epsilon {1} is {2}'.format(len(original[0]), epsilon, target_dim))
+    print('maximum safe dimensionality reduction from {0} with epsilon {1} is {2}'.format(original.shape[1], epsilon, target_dim))
 
     grp = gaussian_random_projection(original, target_dim)
     plot_pca(grp, 'gaussian random projection PCA')
