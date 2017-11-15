@@ -60,7 +60,7 @@ if __name__ == '__main__':
     # print(original)
     plot_pca(original, 'original data PCA')
 
-    epsilon = 0.3  # TODO what is this exactly?
+    epsilon = 0.3
     target_dim = estimate_target_dim(original, epsilon)
     print('min safe dimensionality for epsilon {0} is {1}'.format(epsilon, target_dim))
 
